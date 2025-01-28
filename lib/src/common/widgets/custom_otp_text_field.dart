@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class CustomOtpTextField extends StatelessWidget {
   final List<TextEditingController> controllers;
   final int otpLength;
+  final TextInputType keyboardType;
   final Function(String)? onChanged;
 
   const CustomOtpTextField({
@@ -10,6 +11,7 @@ class CustomOtpTextField extends StatelessWidget {
     required this.controllers,
     this.otpLength = 6,
     this.onChanged,
+    this.keyboardType = TextInputType.phone,
   });
 
   @override
