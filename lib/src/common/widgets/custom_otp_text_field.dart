@@ -29,8 +29,20 @@ class CustomOtpTextField extends StatelessWidget {
             maxLength: 1,
             decoration: InputDecoration(
               counterText: "",
-              border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.orange, width: 2.0),
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey, width: 1.5),
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              ),
             ),
+
+
             onChanged: (value) {
               onChanged?.call(value);
               if (value.isNotEmpty && index < otpLength - 1) {

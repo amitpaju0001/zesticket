@@ -22,7 +22,15 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.orange, width: 2.0),
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey, width: 1.5),
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
         prefixText: "+91 ",
         prefixIcon: hintText.contains("mobile")

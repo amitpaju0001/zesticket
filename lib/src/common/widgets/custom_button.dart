@@ -14,13 +14,23 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: isEnabled ? onPressed : null,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: isEnabled ? Colors.orange : Colors.grey,
-        minimumSize: const Size(double.infinity, 50),
+    return InkWell(
+      onTap: isEnabled ? onPressed : null,
+      splashColor: Colors.orange.withOpacity(0.6),
+      borderRadius: BorderRadius.circular(12.0),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12.0),
+          color: isEnabled ? Colors.orange : Colors.orange[100],
+        ),
+        width: double.infinity,
+        height: 50,
+        alignment: Alignment.center,
+        child: Text(
+          text,
+          style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),
+        ),
       ),
-      child: Text(text, style: const TextStyle(color: Colors.white)),
     );
   }
 }
